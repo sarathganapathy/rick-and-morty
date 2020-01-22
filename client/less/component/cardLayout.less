@@ -1,0 +1,46 @@
+.card-layout {
+    padding: @absolute-very-tight;
+    margin: @absolute-tight @absolute-very-tight;
+    border-radius: @absolute-very-tight;
+    box-sizing: border-box;
+
+    &-body-content {
+        &-items {
+            .large-screen( {
+              .flex-basis(25%);
+              max-width:25%;
+            }
+
+            );
+
+            .medium-screen( {
+              .flex-basis(25%);
+              max-width:25%;
+            }
+
+            );
+
+            .small-portrait( {
+              .flex-basis(100%);
+              max-width:50%;
+            }
+
+            );
+
+            .small-landscape( {
+              .flex-basis(100%);
+              max-width:50%;
+            }
+
+            );
+            padding: @absolute-very-tight;
+            box-sizing: border-box;
+        }
+
+        &-no-results {
+            .flex-grow(1);
+            padding: @absolute-very-tight;
+            text-align: center;
+        }
+    }
+}

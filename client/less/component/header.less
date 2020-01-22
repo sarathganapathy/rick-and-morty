@@ -1,0 +1,66 @@
+.header {
+    .display();
+    padding: @absolute-very-tight;
+    margin: @absolute-tight @absolute-very-tight;
+    border-radius: @absolute-very-tight;
+    .large-screen( {
+        .justify-content(space-between);
+        .flex-direction(row)
+      }
+
+      );
+
+      .medium-screen( {
+        .justify-content(space-between);
+        .flex-direction(row)
+      }
+
+      );
+
+      .small-portrait( {
+        .flex-basis(100%);
+        .flex-direction(column)
+      }
+
+      );
+
+      .small-landscape( {
+        .flex-basis(100%);
+        .flex-direction(column)
+      });
+
+    &-subsection {
+        .display();
+        .flex-wrap(wrap);
+        padding: @absolute-very-tight @absolute-very-tight;
+    }
+    &-label {
+        padding: 0 @absolute-very-tight;
+        font-family: fantasy;
+        font-weight: @font-weight-thin;
+    }
+
+    &-fields {
+        padding: @absolute-very-tight @absolute-very-tight;
+    }
+
+    &-search-button {
+        background: @darkgrey;
+        color: @white;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border: 2px solid @dimgrey;
+        outline: none;
+    }
+    &-search-text {
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      outline: none;
+      border: 2px solid @dimgrey;
+  }
+  & select {
+      border-radius: 15px;
+      outline: none;
+      border: 2px solid @dimgrey;
+  }
+}

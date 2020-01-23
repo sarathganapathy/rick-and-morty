@@ -24,6 +24,7 @@ const CleanWebpackPluginConfig =  new CleanWebpackPlugin(['dist'], {
 
 module.exports = {
   devServer: {
+    writeToDisk: true,
     contentBase: resolve('./dist'),
     historyApiFallback: true,
     inline: true,

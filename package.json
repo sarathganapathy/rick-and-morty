@@ -4,12 +4,11 @@
   "description": "Sapient sample.",
   "main": "client/index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack --mode=production --config ./config/webpack.prod.config.js",
     "build:prod": "NODE_ENV=production webpack --mode=production --config ./config/webpack.prod.config.js",
     "build:dev": "NODE_ENV=development webpack --mode=development --config ./config/webpack.dev.config.js",
     "start": "webpack-dev-server --mode development --config ./config/webpack.dev.config.js",
-    "lint": "./node_modules/eslint/bin/eslint.js ./client/js",
-    "lint:fix": "./node_modules/eslint/bin/eslint.js ./client/js --fix"
+    "lint": "eslint client/js --color --max-warnings 0",
+    "lint:fix": "eslint client/js --color --fix"
   },
   "repository": {
     "type": "git",

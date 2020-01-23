@@ -1,6 +1,6 @@
 # rick-and-morty
 
-Sapient sample.
+rick-and-morty.
 
 ## Quick Start
 
@@ -8,7 +8,7 @@ Sapient sample.
 
 Start the client
 ```
-npm run dev
+npm run start
 
 if you get error message saying NODE_ENV' is not recognized as an internal or external command
 

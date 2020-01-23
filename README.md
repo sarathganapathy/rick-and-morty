@@ -8,7 +8,8 @@ Sapient sample.
 
 Start the client
 ```
-npm run dev
+npm run build:dev
+npm run start
 
 if you get error message saying NODE_ENV' is not recognized as an internal or external command
 

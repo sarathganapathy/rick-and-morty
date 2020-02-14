@@ -1,7 +1,7 @@
 {
   "name": "rick-and-morty",
   "version": "1.0.0",
-  "description": "Sapient sample.",
+  "description": "rick and morty image gallery.",
   "main": "client/index.js",
   "scripts": {
     "build:prod": "NODE_ENV=production webpack --mode=production --config ./config/webpack.prod.config.js",

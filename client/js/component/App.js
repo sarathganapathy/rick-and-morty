@@ -55,14 +55,14 @@ class App extends Component {
   render() {
     const { results } = this.state;
     return (
-      <div>
+      <>
         <Header
           searchInputChange={this.handleSearchInputChange}
           sortSelectionChange={this.handleSortSelectionChange}
           defaultSortValue={SORT_ORDER.ASCENDING}
         />
         <CardLayout shows={results} />
-      </div>
+      </>
     );
   }
 }

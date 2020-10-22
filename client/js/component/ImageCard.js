@@ -3,15 +3,25 @@ import PropTypes from 'prop-types';
 import i18n from '../i18n';
 
 /**
+ * Function to load the original image once image object loads
+ * @param { Object } event - event object
+ * @returns { undefined } does not returns any value
+ */
+const imageLoadHandler = (event) => {
+  const image = event.target;
+  image.setAttribute("src", image.getAttribute("data-src"));
+};
+
+/**
  * Function returns the card row content
  * @param {String} label - row label
  * @param {String} value - row value
- * @returns {Element} Element containg row details
+ * @returns {Element} Element containing row details
  */
 const getCardRow = (label, value) => (
   <div className="image-card-row">
-    <div className="image-card-row-label util-font-label">{label}</div>
-    <div className="image-card-row-value util-font-label util-text-right-align">{value}</div>
+    <span className="image-card-row-label util-font-label">{label}</span>
+    <span className="image-card-row-value util-font-label util-text-right-align">{value}</span>
   </div>
 );
 
@@ -27,12 +37,18 @@ const getCardImage = (
   name, id, creationDate, imageURL
 ) => (
   <div className="image-card-media-container">
-    <img src={imageURL} alt={name} className="image-card-media" />
+    <img
+      src="./assets/loading-indicator.jpg"
+      data-src={imageURL}
+      alt={name}
+      className="image-card-media"
+      onLoad={imageLoadHandler}
+    />
     <div className="image-card-details">
-      <div className="image-card-title">{name}</div>
-      <div className="image-card-sub-title">
+      <h1 className="image-card-title">{name}</h1>
+      <span className="image-card-sub-title">
         { i18n.ID_CREATION.replace("{0}", id).replace("{1}", creationDate)}
-      </div>
+      </span>
     </div>
   </div>
 );
@@ -63,7 +79,7 @@ const getCardContent = (status, species, gender, origin, lastLocation) => (
 const ImageCard = ({
   name, id, creationDate, imageURL, status, species, gender, origin, lastLocation
 }) => (
-  <div className="image-card-root">
+  <article className="image-card-root" tabIndex="0">
     <div className="image-card-inner-layer">
       {getCardImage(
         name, id, creationDate, imageURL
@@ -73,7 +89,7 @@ const ImageCard = ({
       </div>
     </div>
 
-  </div>
+  </article>
 );
 
 ImageCard.propTypes = {

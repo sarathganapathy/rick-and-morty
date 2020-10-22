@@ -26,24 +26,24 @@ const handleSortSelectionChange = sortSelectionChange => (event) => {
  * @desc This is the function for header component which contains search and sort selection elements.
  */
 const Header = ({ searchInputChange, sortSelectionChange, defaultSortValue }) => (
-  <div className="header util-background-container">
+  <header className="header util-background-container">
     <div className="header-subsection">
-      <div className="header-label util-header-text">{i18n.SEARCH_BY_NAME}</div>
+      <h3 id="search-label" className="header-label util-header-text">{i18n.SEARCH_BY_NAME}</h3>
       <div className="header-fields">
-        <input type="text" className="header-search-text" onChange={handleSearchInputChange(searchInputChange)} />
-        <button className="header-search-button" type="button">{i18n.SEARCH}</button>
+        <input type="text" aria-labelledby="search-label" className="header-search-input" onChange={handleSearchInputChange(searchInputChange)} />
+        <button className="header-search-button" type="button" aria-label="Search">{i18n.SEARCH}</button>
       </div>
     </div>
     <div className="header-subsection">
-      <div className="header-label util-header-text">{i18n.SORT_BY_ID}</div>
+      <h3 id="sort-label" className="header-label util-header-text">{i18n.SORT_BY_ID}</h3>
       <div className="header-fields">
-        <select type="text" onChange={handleSortSelectionChange(sortSelectionChange)} defaultValue={defaultSortValue}>
+        <select type="text" aria-labelledby="sort-label" onChange={handleSortSelectionChange(sortSelectionChange)} defaultValue={defaultSortValue}>
           <option value={SORT_ORDER.ASCENDING}>{i18n.ASCENDING}</option>
           <option value={SORT_ORDER.DESCENDING}>{i18n.DESCENDING}</option>
         </select>
       </div>
     </div>
-  </div>
+  </header>
 );
 
 Header.propTypes = {

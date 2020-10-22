@@ -32,9 +32,9 @@ const getNoShowsLabel = () => (
 const CardLayout = (props) => {
   const { shows } = props;
   return (
-    <div className="util-flex-wrap util-background-container card-layout">
+    <main className="util-flex-wrap util-background-container card-layout">
       { shows.length ? getShowCards(shows) : getNoShowsLabel()}
-    </div>
+    </main>
   );
 };
 

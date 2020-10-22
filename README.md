@@ -1,6 +1,6 @@
 # rick-and-morty
 
-rick-and-morty.
+React application to display rick and morty cards.
 
 ## Quick Start
 
